@@ -1,15 +1,15 @@
 const routes = [
 	{
-		method: "GET",
-		path: "/ping",
+		method: 'GET',
+		path: '/ping',
 		config: {
-			description: "Replies with \"Pong!\"",
+			description: 'Replies with "Pong!"',
 			notes: [],
 			tags: []
 		},
 		handler: (request, reply) => {
-			console.log("Pong!")
-			reply("Pong!")
+			request.log(['ping', 'pong', 'request'], 'Pong!')
+			reply('Pong!')
 		}
 	}
 ]

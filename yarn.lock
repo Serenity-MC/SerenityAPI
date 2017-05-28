@@ -696,6 +696,12 @@ items@2.x.x:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/items/-/items-2.1.1.tgz#8bd16d9c83b19529de5aea321acaada78364a198"
 
+jack-logger@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/jack-logger/-/jack-logger-1.0.2.tgz#73d0c58e618a78be3182c9e332fbcffb3aaa3b12"
+  dependencies:
+    terminal-colors "^0.1.4"
+
 jodid25519@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/jodid25519/-/jodid25519-1.0.2.tgz#06d4912255093419477d425633606e0e90782967"
@@ -1360,6 +1366,10 @@ tar@^2.2.1:
     block-stream "*"
     fstream "^1.0.2"
     inherits "2"
+
+terminal-colors@^0.1.4:
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/terminal-colors/-/terminal-colors-0.1.4.tgz#f43df4a966b7bb83f4e00e24731b63bcc75b91c7"
 
 through@2, through@~2.3, through@~2.3.1:
   version "2.3.8"

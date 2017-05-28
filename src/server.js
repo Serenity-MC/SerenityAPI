@@ -1,8 +1,11 @@
-const Hapi = require("hapi")
-const routes = require("./routes")
+const Hapi = require('hapi')
+const serverConfig = require('./config/server')
+const routes = require('./routes')
+const logger = require('./logger').logger
+const log = require('./logger').log
 
 const server = new Hapi.Server()
-server.connection({ host: "localhost", port: 9090 })
+server.connection({ host: serverConfig.host, port: serverConfig.port })
 
 server.route(routes)
 
@@ -12,5 +15,9 @@ server.start(err => {
 		server.stop();
 	}
 
-	console.log(`The server is listening on ${server.info.uri}`)
+	logger.log(`The server has started`, 'success', [`${server.info.host}:${server.info.port}`])
 }) 
+
+server.on('request', (request, event, tags) => {
+	log(request, event, tags)
+})
