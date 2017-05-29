@@ -1,0 +1,9 @@
+{
+    "SerenityPlayers": [
+        {
+            "uuid": "thisisauuid",
+            "token": "thisisatoken",
+            "permission": "admin"
+        }
+    ]
+}

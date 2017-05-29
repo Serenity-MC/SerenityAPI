@@ -1,16 +1,32 @@
+const handlers = require('./handlers')
+
 const routes = [
+
 	{
 		method: 'GET',
 		path: '/ping',
 		config: {
 			description: 'Replies with "Pong!"',
 			notes: [],
-			tags: []
+			tags: [],
+			auth: false
 		},
-		handler: (request, reply) => {
-			request.log(['ping', 'pong', 'request'], 'Pong!')
-			reply('Pong!')
-		}
+		handler: handlers.ping
+	},
+
+	{
+		method: 'GET',
+		path: '/player/{uuid}',
+		config: {
+			description: 'Returns a player\'s row.',
+			notes: ['Requires the player\s UUID.'],
+			tags: ['player', 'uuid'],
+			auth: {
+				strategy: 'bearer',
+				scope: 'admin'
+			}
+		},
+		handler: handlers.player
 	}
 ]
 
